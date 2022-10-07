@@ -7,35 +7,35 @@ Parameters:
 
   TargetRegion:
     Type: String
-    Default: ap-northeast-2
+    Default: us-east-1
 
   AvailabilityZone1:
     Type: String
-    Default: ap-northeast-2a
+    Default: us-east-1a
 
   AvailabilityZone2:
     Type: String
-    Default: ap-northeast-2b
+    Default: us-east-1b
 
   AvailabilityZone3:
     Type: String
-    Default: ap-northeast-2c
+    Default: us-east-1c
 
   VpcBlock:
     Type: String
-    Default: 192.168.0.0/16
+    Default: 100.10.0.0/16
 
   WorkerSubnet1Block:
     Type: String
-    Default: 192.168.0.0/24
+    Default: 100.10.0.0/24
 
   WorkerSubnet2Block:
     Type: String
-    Default: 192.168.1.0/24
+    Default: 100.10.1.0/24
 
   WorkerSubnet3Block:
     Type: String
-    Default: 192.168.2.0/24
+    Default: 100.10.2.0/24
 
 Resources:
   EksWorkVPC:

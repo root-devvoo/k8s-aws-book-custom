@@ -6,19 +6,19 @@ Parameters:
 
   WorkerSubnet1Block:
     Type: String
-    Default: 192.168.0.0/24
+    Default: 100.10.0.0/24
 
   WorkerSubnet2Block:
     Type: String
-    Default: 192.168.1.0/24
+    Default: 100.10.1.0/24
 
   WorkerSubnet3Block:
     Type: String
-    Default: 192.168.2.0/24
+    Default: 100.10.2.0/24
 
   OpeSubnetBlock:
     Type: String
-    Default: 192.168.5.0/24
+    Default: 100.10.5.0/24
 
   OpeServerRouteTable:
     Type: String
@@ -29,27 +29,27 @@ Parameters:
 
   TargetRegion:
     Type: String
-    Default: ap-northeast-2
+    Default: us-east-1
 
   AvailabilityZone1:
     Type: String
-    Default: ap-northeast-2a
+    Default: us-east-1a
 
   AvailabilityZone2:
     Type: String
-    Default: ap-northeast-2b
+    Default: us-east-1b
 
   AvailabilityZone3:
     Type: String
-    Default: ap-northeast-2c
+    Default: us-east-1c
 
   RdsSubnet1Block:
     Type: String
-    Default: 192.168.3.0/24
+    Default: 100.10.3.0/24
 
   RdsSubnet2Block:
     Type: String
-    Default: 192.168.4.0/24
+    Default: 100.10.4.0/24
 
   OpeServerInstanceType:
     Type: String
@@ -57,8 +57,8 @@ Parameters:
 
   OpeServerImageId:
     Type: String
-    Default: ami-004ca97dc8c3b41f8  # ap-northeast-2, GPU, Amazon Linux 2
-    # aws ssm get-parameter --name /aws/service/eks/optimized-ami/1.19/amazon-linux-2-gpu/recommended/image_id --region ap-northeast-2 --query "Parameter.Value" --output text
+    Default: ami-049c8136857294fbc  # us-east-1, GPU, Amazon Linux 2
+    # aws ssm get-parameter --name /aws/service/eks/optimized-ami/1.19/amazon-linux-2-gpu/recommended/image_id --region ap-northeast-3 --query "Parameter.Value" --output text
 
   OpeServerVolumeSize:
     Type: Number
@@ -127,7 +127,7 @@ Resources:
       DBInstanceIdentifier: eks-work-db
       Engine: mysql  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#aws-properties-rds-database-instance-properties
       EngineVersion: 5.7  # https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt
-      DBInstanceClass: db.t2.micro
+      DBInstanceClass: db.t3.micro
       AllocatedStorage: 30
       StorageType: gp2
       DBName: eksworkdb
