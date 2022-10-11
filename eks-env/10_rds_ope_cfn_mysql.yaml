@@ -6,19 +6,19 @@ Parameters:
 
   WorkerSubnet1Block:
     Type: String
-    Default: 100.10.0.0/24
+    Default: 120.20.0.0/24
 
   WorkerSubnet2Block:
     Type: String
-    Default: 100.10.1.0/24
+    Default: 120.20.1.0/24
 
   WorkerSubnet3Block:
     Type: String
-    Default: 100.10.2.0/24
+    Default: 120.20.2.0/24
 
   OpeSubnetBlock:
     Type: String
-    Default: 100.10.5.0/24
+    Default: 120.20.5.0/24
 
   OpeServerRouteTable:
     Type: String
@@ -29,27 +29,27 @@ Parameters:
 
   TargetRegion:
     Type: String
-    Default: us-east-1
+    Default: us-west-2
 
   AvailabilityZone1:
     Type: String
-    Default: us-east-1a
+    Default: us-west-2a
 
   AvailabilityZone2:
     Type: String
-    Default: us-east-1b
+    Default: us-west-2b
 
   AvailabilityZone3:
     Type: String
-    Default: us-east-1c
+    Default: us-west-2c
 
   RdsSubnet1Block:
     Type: String
-    Default: 100.10.3.0/24
+    Default: 120.20.3.0/24
 
   RdsSubnet2Block:
     Type: String
-    Default: 100.10.4.0/24
+    Default: 120.20.4.0/24
 
   OpeServerInstanceType:
     Type: String
@@ -57,8 +57,8 @@ Parameters:
 
   OpeServerImageId:
     Type: String
-    Default: ami-049c8136857294fbc  # us-east-1, GPU, Amazon Linux 2
-    # aws ssm get-parameter --name /aws/service/eks/optimized-ami/1.19/amazon-linux-2-gpu/recommended/image_id --region ap-northeast-3 --query "Parameter.Value" --output text
+    Default: ami-04c85255b9d32d98b  # us-west-2, GPU, Amazon Linux 2
+    # aws ssm get-parameter --name /aws/service/eks/optimized-ami/1.23/amazon-linux-2-gpu/recommended/image_id --region us-west-2 --query "Parameter.Value" --output text
 
   OpeServerVolumeSize:
     Type: Number
