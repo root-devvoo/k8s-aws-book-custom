@@ -136,11 +136,11 @@ spec:
         - --cloud-provider=aws
         - --skip-nodes-with-local-storage=false
         # 오토스케일링 그룹 이름 설정
-        - --nodes=2:5:eksctl-eks-work-cluster-nodegroup-eks-work-nodegroup-NodeGroup-WFVQ9NBFZ0V3
+        - --nodes=2:5:eks-eks-work-nodegroup-98c1ea14-cb47-f3d9-cd7b-1973920fb9fb
         env:
         - name: AWS_REGION
           # 리전을 지정
-          value: ap-northeast-2
+          value: us-west-2
         volumeMounts:
         - name: ssl-certs
           mountPath: /etc/ssl/certs/ca-certificates.crt
